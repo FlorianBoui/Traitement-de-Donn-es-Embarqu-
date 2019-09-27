@@ -53,33 +53,33 @@ Les technologies qui permettront de réaliser le projets sont les suivantes:
 
 pseudo code de la boucle de détection d'un mouvement:
 
-var projet = projet selectionner par l'utilisateur
-var mapprojectdrone = (clé = signal_leap, données_à_envoyer)
-var mapprojecttir = (clé = signal_leap, données_à_envoyer)
+var projet = projet selectionner par l'utilisateur\n
+var mapprojectdrone = (clé = signal_leap, données_à_envoyer)\n
+var mapprojecttir = (clé = signal_leap, données_à_envoyer)\n
 
-waitforsignal();
+waitforsignal();\n
 
-//fonction attendant un signal de la leap motion
-function waitforsignal(){
-    if(signalrecieve == 1){
-        interpretsignal(projet,signal);
-    }else{
-        waitforsignal;
-    }
-    updatehandvideo();
-}
+//fonction attendant un signal de la leap motion\n
+function waitforsignal(){\n
+    if(signalrecieve == 1){\n
+        interpretsignal(projet,signal);\n
+    }else{\n
+        waitforsignal;\n
+    }\n
+    updatehandvideo();\n
+}\n
 
-//fonction envoyant des données en fonction du projet et du signal envoyé par la leap
-function interpretsignal(projet,signal){
-    if(projet = drone){
-        //envoyer la donnée correspondant dans la map mapprojectdrone avec la clé signal
-    }
-    elseif(projet = tir){
-        //envoyer la donnée correspondant dans la map mapprojecttir avec la clé signal
-    }
-}
+//fonction envoyant des données en fonction du projet et du signal envoyé par la leap\n
+function interpretsignal(projet,signal){\n
+    if(projet = drone){\n
+        //envoyer la donnée correspondant dans la map mapprojectdrone avec la clé signal\n
+    }\n
+    elseif(projet = tir){\n
+        //envoyer la donnée correspondant dans la map mapprojecttir avec la clé signal\n
+    }\n
+}\n
 
-//fonction envoyant le flux vidéo des squellettes des mains
-function updatehandvideo(){
-    //envoyer au serveur la vidéo des squelettes des mains
-}
+//fonction envoyant le flux vidéo des squellettes des mains\n
+function updatehandvideo(){\n
+    //envoyer au serveur la vidéo des squelettes des mains\n
+}\n
