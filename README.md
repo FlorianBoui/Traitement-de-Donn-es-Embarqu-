@@ -11,7 +11,7 @@ Une interface affichant le squelette des mains sera aussi nécessaire.
 Le contrôle de plusieurs projets sera possible:
 
 -Un drone à déplacer et manipuler sa caméra.
--Projet légo (à compléter)
+-Projet légo d'un tireur motorisé
 
 les composants du programme sont donc :
 
@@ -35,11 +35,11 @@ On envoie:
 
 Structure:
 
-{float Moteurgauche;
- float Moteurdroit;
- float Moteurhauteur;
- bool Tirer;
- bool auto;}
+	{float Moteurgauche;
+ 	float Moteurdroit;
+ 	float Moteurhauteur;
+ 	bool Tirer;
+ 	bool auto;}
 
 
  Drone: (reste a déterminer)
@@ -53,13 +53,13 @@ Les technologies qui permettront de réaliser le projets sont les suivantes:
 
 pseudo code de la boucle de détection d'un mouvement:
 
-var projet = projet selectionner par l'utilisateur
-var mapprojectdrone = (clé = signal_leap, données_à_envoyer)
-var mapprojecttir = (clé = signal_leap, données_à_envoyer)
+	var projet = projet selectionner par l'utilisateur
+	var mapprojectdrone = (clé = signal_leap, données_à_envoyer)
+	var mapprojecttir = (clé = signal_leap, données_à_envoyer)
 
-waitforsignal();
+	waitforsignal();
 
-//fonction attendant un signal de la leap motion
+	//fonction attendant un signal de la leap motion
 
 	function waitforsignal(){
 		if(signalrecieve == 1){
@@ -70,18 +70,18 @@ waitforsignal();
 		updatehandvideo()
 	}
 
-//fonction envoyant des données en fonction du projet et du signal envoyé par la leap
+	//fonction envoyant des données en fonction du projet et du signal envoyé par la leap
 
-function interpretsignal(projet,signal){
-    if(projet = drone){
-        //envoyer la donnée correspondant dans la map mapprojectdrone avec la clé signal
-    }
-    elseif(projet = tir){
-        //envoyer la donnée correspondant dans la map mapprojecttir avec la clé signal
-    }
-}
+	function interpretsignal(projet,signal){
+    		if(projet = drone){
+        		//envoyer la donnée correspondant dans la map mapprojectdrone avec la clé signal
+    		}
+    		elseif(projet = tir){
+        		//envoyer la donnée correspondant dans la map mapprojecttir avec la clé signal
+    		}
+	}
 
-//fonction envoyant le flux vidéo des squellettes des mains\n
-function updatehandvideo(){
-    //envoyer au serveur la vidéo des squelettes des mains
-}
+	//fonction envoyant le flux vidéo des squellettes des mains\n
+	function updatehandvideo(){
+    		//envoyer au serveur la vidéo des squelettes des mains
+	}
