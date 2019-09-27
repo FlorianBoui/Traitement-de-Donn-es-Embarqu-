@@ -60,14 +60,15 @@ var mapprojecttir = (clé = signal_leap, données_à_envoyer)
 waitforsignal();
 
 //fonction attendant un signal de la leap motion
-function waitforsignal(){
-    if(signalrecieve == 1){
-        interpretsignal(projet,signal)
-    }else{
-        waitforsignal()
-    }
-    updatehandvideo()
-}
+
+ function waitforsignal(){
+     if(signalrecieve == 1){
+         interpretsignal(projet,signal)
+     }else{
+         waitforsignal()
+     }
+     updatehandvideo()
+ }
 
 //fonction envoyant des données en fonction du projet et du signal envoyé par la leap
 
