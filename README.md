@@ -63,11 +63,11 @@ waitforsignal();
 
 	function waitforsignal(){
 		if(signalrecieve == 1){
-  	interpretsignal(projet,signal)
- 	}else{
-  	waitforsignal()
- 	}
-  	updatehandvideo()
+			interpretsignal(projet,signal)
+		}else{
+			waitforsignal()
+		}
+		updatehandvideo()
 	}
 
 //fonction envoyant des données en fonction du projet et du signal envoyé par la leap
