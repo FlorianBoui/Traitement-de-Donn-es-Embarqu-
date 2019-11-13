@@ -1,6 +1,9 @@
 import sys
 #TODO set lib for Linux
-sys.path.append('./lib')
+if sys.platform == 'linux':
+    sys.path.append('./lib/Linux')
+else:
+    sys.path.append('./lib/Windows')
 import threading
 import numpy as np
 from websocket import create_connection
@@ -26,7 +29,7 @@ def convert_image(image):
 
 #TODO Maybe set the putText for a few frames (because too fast)
 def run(controller):
-    ws = create_connection("ws://127.0.0.1:6437/v6.json")
+#    ws = create_connection("ws://127.0.0.1:6437/v6.json")
     while True:
         frame = controller.frame()
         image = frame.images[0]
@@ -41,9 +44,9 @@ def run(controller):
                     cv2.putText(img, "Circle detected", (0, int(image.width/2)-100), cv2.FONT_HERSHEY_SIMPLEX, 1.0, (255, 255, 255), thickness=2, lineType=cv2.LINE_AA)
 
             cv2.imshow('Leap motion viewer', img)
-            print(ws.recv())
+#            print(ws.recv())
             if cv2.waitKey(1) & 0xFF == ord('q'):
-                ws.close()
+#                ws.close()
                 break
 
 if __name__ == "__main__":
