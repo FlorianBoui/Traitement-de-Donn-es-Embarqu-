@@ -43,6 +43,13 @@ def run(controller):
                     #print("Circle : Get json from websocket")
                     cv2.putText(img, "Circle detected", (0, int(image.width/2)-100), cv2.FONT_HERSHEY_SIMPLEX, 1.0, (255, 255, 255), thickness=2, lineType=cv2.LINE_AA)
 
+            #Note: Pinch detected but sometimes it can confuse with the circle gesture
+            #      It works well if we do the pinch without the circle around fingers
+            #      Maybe removes the circle gesture (if we don't need it)
+            for hand in frame.hands:
+                if hand.pinch_strength == 1.0:
+                    cv2.putText(img, "Pinch detected", (0, int(image.width/2)-100), cv2.FONT_HERSHEY_SIMPLEX, 1.0, (255, 255, 255), thickness=2, lineType=cv2.LINE_AA)
+
             cv2.imshow('Leap motion viewer', img)
 #            print(ws.recv())
             if cv2.waitKey(1) & 0xFF == ord('q'):
